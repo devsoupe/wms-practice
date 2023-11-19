@@ -1,5 +1,6 @@
 package com.devsoupe.wmspractice.product.feature;
 
+import com.devsoupe.wmspractice.product.domain.*;
 import org.springframework.util.Assert;
 
 public class RegisterProduct {
@@ -61,7 +62,8 @@ public class RegisterProduct {
         }
 
         public Product toDomain() {
-            return new Product(name,
+            return new Product(
+                    name,
                     code,
                     description,
                     brand,
@@ -70,7 +72,8 @@ public class RegisterProduct {
                     category,
                     temperatureZone,
                     weightInGrams,
-                    new ProductSize(widthInMillimeters, heightInMillimeters, lengthInMillimeters));
+                    new ProductSize(widthInMillimeters, heightInMillimeters, lengthInMillimeters)
+            );
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.devsoupe.wmspractice.product.feature;
+package com.devsoupe.wmspractice.product.domain;
 
 public enum Category {
     ELECTRONICS("전자 제품");

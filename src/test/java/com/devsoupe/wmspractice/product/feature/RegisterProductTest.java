@@ -1,5 +1,8 @@
 package com.devsoupe.wmspractice.product.feature;
 
+import com.devsoupe.wmspractice.product.domain.Category;
+import com.devsoupe.wmspractice.product.domain.ProductRepository;
+import com.devsoupe.wmspractice.product.domain.TemperatureZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

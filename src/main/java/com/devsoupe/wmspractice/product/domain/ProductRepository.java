@@ -1,4 +1,4 @@
-package com.devsoupe.wmspractice.product.feature;
+package com.devsoupe.wmspractice.product.domain;
 
 import java.util.ArrayList;
 import java.util.HashMap;
