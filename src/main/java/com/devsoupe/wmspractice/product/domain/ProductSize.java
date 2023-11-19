@@ -16,19 +16,19 @@ public class ProductSize {
     }
 
     private void validateProductSize(Long widthInMillimeters, Long heightInMillimeters, Long lengthInMillimeters) {
-        Assert.notNull(widthInMillimeters, "가로길이는 필수입니다.");
+        Assert.notNull(widthInMillimeters, "상품의 너비는 필수입니다.");
         if (0 > widthInMillimeters) {
-            throw new IllegalArgumentException("가로길이는 0보다 작을 수 없습니다.");
+            throw new IllegalArgumentException("상품의 너비는 0보다 작을 수 없습니다.");
         }
 
-        Assert.notNull(heightInMillimeters, "세로길이는 필수입니다.");
+        Assert.notNull(heightInMillimeters, "상품의 높이는 필수입니다.");
         if (0 > heightInMillimeters) {
-            throw new IllegalArgumentException("세로길이는 0보다 작을 수 없습니다.");
+            throw new IllegalArgumentException("상품의 높이는 0보다 작을 수 없습니다.");
         }
 
-        Assert.notNull(lengthInMillimeters, "길이는 필수입니다.");
+        Assert.notNull(lengthInMillimeters, "상품의 길이는 필수입니다.");
         if (0 > lengthInMillimeters) {
-            throw new IllegalArgumentException("길이는 0보다 작을 수 없습니다.");
+            throw new IllegalArgumentException("상품의 길이는 0보다 작을 수 없습니다.");
         }
     }
 }
