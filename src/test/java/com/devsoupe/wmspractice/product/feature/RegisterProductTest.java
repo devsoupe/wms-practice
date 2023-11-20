@@ -1,34 +1,21 @@
 package com.devsoupe.wmspractice.product.feature;
 
+import com.devsoupe.wmspractice.common.APITest;
 import com.devsoupe.wmspractice.product.domain.Category;
 import com.devsoupe.wmspractice.product.domain.ProductRepository;
 import com.devsoupe.wmspractice.product.domain.TemperatureZone;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class RegisterProductTest {
-    @LocalServerPort
-    private int port;
-
+class RegisterProductTest extends APITest {
     @Autowired
     private ProductRepository productRepository;
-
-    @BeforeEach
-    void setUp() {
-        if (RestAssured.UNDEFINED_PORT == RestAssured.port) {
-            RestAssured.port = port;
-        }
-    }
 
     @Test
     @DisplayName("상품을 등록한다.")
@@ -63,10 +50,8 @@ class RegisterProductTest {
         );
 
         // when
-//        registerProduct.request(request);
         RestAssured.given().log().all()
-                .contentType(ContentType.JSON)
-                .body(request)
+                .contentType(ContentType.JSON).body(request)
                 .when()
                 .post("/products")
                 .then().log().all()
